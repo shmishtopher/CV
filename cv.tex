@@ -1,0 +1,131 @@
+% Copyright 2022 Christopher K. "Shmish" Schmitt
+% 
+% Licensed under the Apache License, Version 2.0 (the "License");
+% you may not use this file except in compliance with the License.
+% You may obtain a copy of the License at
+% 
+%     http://www.apache.org/licenses/LICENSE-2.0
+% 
+% Unless required by applicable law or agreed to in writing, software
+% distributed under the License is distributed on an "AS IS" BASIS,
+% WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+% See the License for the specific language governing permissions and
+% limitations under the License.
+
+\documentclass[a4paper]{article}
+
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\hypersetup{
+  colorlinks=false,
+  linkcolor=blue,
+  filecolor=magenta,      
+  urlcolor=cyan,
+  pdftitle={Overleaf Example},
+  pdfpagemode=FullScreen,
+}
+
+\geometry{
+  a4paper,
+  total={170mm,257mm},
+  left=20mm,
+  top=20mm,
+}
+
+\urlstyle{same}
+\pagestyle{empty}
+
+% Custom section enviornment
+% #1 - Section name
+\newenvironment{cvsection}[1]{
+  \noindent\textsc{#1}
+  \vspace{4pt}
+  \hrule
+  \vspace{4pt}
+
+}{\vspace{4pt}}
+
+% University macro
+% #1 - University
+% #2 - Location
+% #3 - Degree
+% #4 - GPA
+% #5 - Dates
+\newcommand{\school}[5] {
+  \noindent\textbf{#1}\hfill #2\\
+  \noindent#3 \textit{GPA: #4} \hfill #5\\
+}
+
+% Employer macro
+% #1 - Employer
+% #2 - Location
+% #3 - Role
+% #4 - Dates
+\newcommand{\employer}[4] {
+  \noindent\textbf{#1} \hfill #2\\
+  \noindent\textit{#3} \hfill #4\\
+  \vspace{-8pt}
+}
+
+% Project macro
+% #1 - Name
+% #2 - Technologies
+% #3 - Link
+% #4 - Description
+\newcommand{\project}[4]{
+  \noindent{\textbf{#1}} {\sl #2} \hfill \ifx&#3&\else \href{#3}{#3}\fi\\
+  \noindent#4\\
+  \vspace{1pt}\\
+}
+
+\begin{document}
+  \begin{center}
+    {\huge Christopher K. Schmitt}\\
+    \vspace{8pt}
+    c.schmitt@my.ccsu.edu $\cdot$ 8605787614 $\cdot$ \href{https://shmish.dev/}{https://shmish.dev/}\\
+  \end{center}
+
+  \begin{cvsection}{Education}
+    \school{Central Connecticut State University}{New Britain, CT}{BS Computer Science - Honors}{3.48}{Sep 2018 - Jun 2022}
+  \end{cvsection}
+
+  \begin{cvsection}{Experience}
+    \employer{TheCoderSchool}{Farmington, CT}{Instructor}{Oct 2018 - Present}
+    
+    \begin{itemize}
+      \item Taught computer programming and computer science concepts
+      \item Developed curricula for teaching foundational concepts in computing and robotics
+    \end{itemize}
+  \end{cvsection}
+
+  \begin{cvsection}{Skills}
+    \begin{tabular}{ l l }
+      Full Stack Web Development:  & JavaScript, Typescript, React, Vue, Express, Node, Mongo  \\
+      Systems Programming:         & Rust, C, MIPS Assembly, AVR Assembly                      \\
+      Machine Learning:            & TensorFlow, PyTorch, Data Processing                      \\
+      Game Development:            & Java, C\#, Lua                                            \\
+      Other Programming Languages: & Haskell, Python, Latex                                    \\
+      Tools:                       & Git, CI Pipelines, VMs                                    \\
+      Soft Skills:                 & Project Leadership, Communication, Collaboration, Tenacity \\
+    \end{tabular}\\
+  \end{cvsection}
+
+  \begin{cvsection}{Projects}
+    \project{Twitter-RNN}{TensorFlow, JavaScript}{https://github.com/shmishtopher/Twitter-RNN}{An artificial neural network leverging BEAM search to generate Tweets indistinguishable to those composed by humans.}
+    \project{VAU - The Vocaloid Archive Utility}{Rust}{https://github.com/shmishtopher/VAU}{An application for extracting and recompiling the proprietary voicebank format.}
+    \project{CoinBlock}{JavaScript}{https://github.com/shmishtopher/CoinBlock}{An extension for detecting and blocking browser-based crypto mining attacks with thousands of active users.}
+    \project{pneumonia-CNN}{TensorFlow, JavaScript}{https://github.com/shmishtopher/pneumonia-CNN}{A deep convolutional network for diagnosing pneumonia with a high degree of accuracy.}
+    \project{Claims Management System}{React, Express, JWT Authentication}{}{A tool developed for The Hartford insurace corperation to process claims. Build with a small team of four other developers leveraging Agile processes.}
+    \project{FreeAgentNow}{Express, JWT Authentication}{}{A social media platform targeted at student athletes. Built for a startup in the UConn TIP program with a team of four other developers leveraging Agile processes.}
+  \end{cvsection}
+
+  \begin{cvsection}{Research}
+    \noindent\textbf{De Bruijn Graph Genome Assembly Acceleration} \hfill CCSU 2019-2020\\
+    Lead investigator studying optimal k-mer length for probabilistic genome assemby using De Bruijn graphs. Submitted to the Central Undergraduate Research Confrence.\\
+
+    \noindent\textbf{Dark Web Text Classification with RNNs} \hfill CCSU 2021-Present\\
+    Lead investigator studying and developing unsupervised text classification techniques for analyzing dark web documents. Collaborated closely with CS department faculty to collect data and produce a paper to be submitted to several confrences.\\
+  \end{cvsection}
+\end{document}
