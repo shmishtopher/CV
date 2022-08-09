@@ -32,7 +32,7 @@
 
 \geometry{
     a4paper,
-    total={170mm,257mm},
+    total={170mm,260mm},
     left=20mm,
     top=20mm,
 }
@@ -58,9 +58,11 @@
 % #3 - Degree
 % #4 - GPA
 % #5 - Dates
-\newcommand{\school}[5] {
+% #6 - Minors
+\newcommand{\school}[6] {
     \noindent\textbf{#1}\hfill#2\\
-    \noindent#3\textit{GPA: #4}\hfill#5\vspace{8pt}\\
+    \noindent#3 \textit{GPA: #4}\hfill#5\\
+    \noindent\vspace{8pt}Minors in #6\\
 }
 
 
@@ -116,7 +118,7 @@
     % List relevant university education, including dates, locations, degree 
     % programs, and performance.
     \begin{cvsection}{Education}
-        \school{Central Connecticut State University}{New Britain, CT}{BS Computer Science -- Honors}{3.48}{Sep 2018 --- Jun 2022}
+        \school{Central Connecticut State University}{New Britain, CT}{BS Computer Science -- Honors}{3.48}{Sep 2018 --- Jun 2022}{Mathematics, History, and Psychology}
     \end{cvsection}
 
     % List relevant work expirence and previous employers, including location,
